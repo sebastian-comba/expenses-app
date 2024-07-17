@@ -27,6 +27,8 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     expose:
       - 5432
+    ports:
+      - 5432:5432
     healthcheck:
       test: ['CMD', 'pg_isready']
       interval: 10s
@@ -36,7 +38,7 @@ services:
       - postgres-net
 
   pgadmin:
-    image: dpage/pgadmin4:6.11
+    image: dpage/pgadmin4:8.9
     restart: always
     volumes:
       - ./pgadmin-bootstrap/:/pgadmin4/bootstrap/
