@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { PurchasesService } from './purchases.service';
-import { Purchase, PurchaseBody } from './types';
+import { Purchase, PurchaseInsert } from './types';
 
 @Controller('purchases')
 export class PurchasesController {
@@ -17,7 +17,7 @@ export class PurchasesController {
   }
 
   @Post()
-  async postPurchase(@Body() body: PurchaseBody): Promise<void> {
+  async postPurchase(@Body() body: PurchaseInsert): Promise<void> {
     console.log(body);
 
     return this.purchasesService.postPurchase(body);

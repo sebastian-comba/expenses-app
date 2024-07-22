@@ -1,10 +1,10 @@
-export type PurchaseBody = {
+export type PurchaseInsert = {
   amount: number;
-  description: string;
+  title: string;
 };
 
 export type Purchase = {
   id: string;
   amount: number;
-  description: string;
+  title: string;
 };

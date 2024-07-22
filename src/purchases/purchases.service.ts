@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { Purchase, PurchaseBody } from './types';
+import { Purchase, PurchaseInsert } from './types';
 
 @Injectable()
 export class PurchasesService {
-  async getPurchases(): Promise<[]> {
+  async getPurchases(): Promise<Purchase[]> {
     try {
       const res = {};
       console.log(res);
@@ -23,7 +23,7 @@ export class PurchasesService {
     }
   }
 
-  async postPurchase(purchase: PurchaseBody): Promise<void> {
+  async postPurchase(purchase: PurchaseInsert): Promise<PurchaseInsert> {
     try {
       const res = {};
       console.log(res);
